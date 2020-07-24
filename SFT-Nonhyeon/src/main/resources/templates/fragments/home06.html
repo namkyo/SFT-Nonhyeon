@@ -1,0 +1,143 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<hr style="border: solid 10px red;">
+<br>
+<br>
+<!-- pc버전 -->
+<div class="lt_menu hidden-xs hidden-sm" style="border-top: dashed;">
+	<h2>프리미엄 정보 정밀분석 완료</h2>
+	<h4
+		style="text-align: center; font-size: 0.946em; margin-bottom: 40px;">이름/연락처에만
+		입력하시면 VIP링크를 보내드립니다</h4>
+	<section id="bo_w">
+		<form name="fwrite" id="form1" th:action="@{consultingWrite}"
+			method="post" autocomplete="off">
+
+
+
+			<div class="write_div" style="text-align: center;">
+				<label for="wr_name" class="sound_only">이름<strong>필수</strong></label>
+				<input type="text" name="name" value="" id="name" required
+					class="frm_input full_input required" maxlength="20"
+					placeholder="이름" style="width: 320px;">
+			</div>
+			<div class="write_div" style="text-align: center;">
+				<label for="wr_password" class="sound_only">핸드폰번호<strong>필수</strong></label>
+				<select name="phone_01" id="phone_01" required
+					class="frm_input full_input required" placeholder="앞자리"
+					style="width: 100px;">
+					<option value="010">010</option>
+					<option value="011">011</option>
+					<option value="016">016</option>
+				</select> - <input type="text" name="phone_02" id="phone_02" required
+					class="frm_input full_input required" maxlength="4"
+					placeholder="중간자리" style="width: 100px;"> - <input
+					type="text" name="phone_03" id="phone_03" required
+					class="frm_input full_input required" maxlength="4"
+					placeholder="끝자리" style="width: 100px;"> <input
+					type="hidden" name="phone" id="phone">
+
+			</div>
+
+			<div class="write_div" style="text-align: center;">
+				<input type="button" value="요청" onclick="snedForm1()"
+					class="btn_submit btn" style="line-height: 0px;">
+			</div>
+		</form>
+		<script>
+			function snedForm1() {
+				var form1 = document.getElementById('form1');
+
+				var num1 = document.getElementById('phone_01').value;
+				var num2 = document.getElementById('phone_02').value;
+				var num3 = document.getElementById('phone_03').value;
+
+				var num = document.getElementById('phone');
+				num.value = num1 + num2 + num3;
+				if(confirm('VIP방 연락을 받으시겠습니까?')){
+					form1.submit();
+				}else{
+					return false;
+				}
+			}
+			// 핸드폰 번호 체크 정규식
+
+			function isCelluar(asValue) {
+				var regExp = /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})|\d{4}$/;
+				return regExp.test(asValue); // 형식에 맞는 경우 true 리턴
+			}
+		</script>
+	</section>
+</div>
+
+<!-- 모바일버전 -->
+
+<div class="hidden-lg hidden-md list_0" style="text-align: center;">
+	<h2>프리미엄 정보 정밀분석 완료</h2>
+	<h4
+		style="text-align: center; font-size: 0.946em; margin-bottom: 40px;">이름/연락처에만
+		입력하시면 VIP링크를 보내드립니다</h4>
+
+	<section id="bo_w">
+		<form name="fwrite" id="form2" th:action="@{consultingWrite}"
+			method="post" autocomplete="off">
+
+
+			<div class="write_div" style="text-align: center;">
+				<label for="wr_name" class="sound_only">이름<strong>필수</strong></label>
+				<input type="text" name="name" value="" id="name" required
+					class="frm_input full_input required" maxlength="20"
+					placeholder="이름" style="width: 100%;">
+			</div>
+			<div class="write_div" style="text-align: center;">
+				<label for="wr_password" class="sound_only">핸드폰번호<strong>필수</strong></label>
+				<select name="phone_01" id="phone_01" required
+					class="frm_input full_input required" placeholder="앞자리"
+					style="width:30%;">
+					<option value="010">010</option>
+					<option value="011">011</option>
+					<option value="016">016</option>
+				</select> - <input type="text" name="phone_02" id="phone_02" required
+					class="frm_input full_input required" maxlength="4"
+					placeholder="중간자리" style="width: 30%;"> - <input
+					type="text" name="phone_03" id="phone_03" required
+					class="frm_input full_input required" maxlength="4"
+					placeholder="끝자리" style="width: 30%;"> <input
+					type="hidden" name="phone" id="phone">
+			</div>
+			<div class="write_div" style="text-align: center;">
+				<input type="button" value="요청" onclick="snedForm2()"
+					class="btn_submit btn" style="line-height: 0px;">
+			</div>
+		</form>
+		<script>
+			function snedForm2() {
+				var form1 = document.getElementById('form2');
+
+				var num1 = document.getElementById('phone_01').value;
+				var num2 = document.getElementById('phone_02').value;
+				var num3 = document.getElementById('phone_03').value;
+
+				var num = document.getElementById('phone');
+				num.value = num1 + num2 + num3;
+				if(confirm('VIP방 연락을 받으시겠습니까?')){
+					form1.submit();
+				}else{
+					return false;
+				}
+			}
+			// 핸드폰 번호 체크 정규식
+
+			function isCelluar(asValue) {
+				var regExp = /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})|\d{4}$/;
+				return regExp.test(asValue); // 형식에 맞는 경우 true 리턴
+			}
+		</script>
+	</section>
+	<Br> <Br>
+</div>
+<br>
+<br>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="~{/layout/layout1}">
+<div layout:fragment="content">
+	<!-- 탑-->
+	<th:block th:insert="fragments/top"></th:block>
+
+	<div id="wrapper">
+
+		<div id="container">
+			<h2 id="container_title" class="top hidden-xs hidden-sm"
+				title="SFT 소개">SFT 소개</h2>
+			<article id="ctt" class="ctt_Cate_code03">
+				<div id="ctt_con">
+					<div style="text-align: right;">
+						<img th:src="@{/theme/cookie/img/pagelogo.png}"
+							th:title="@{/theme/cookie/img/pagelogo.png}"
+							th:alt="@{/theme/cookie/img/pagelogo.png}" />
+					</div>
+					<p></p>
+					<p>
+						<br />
+					</p>
+					<p>
+						<br />
+					</p>
+					<p>
+						<br />
+					</p>
+					<div align="left"
+						style="font-family: 'Noto Sans KR', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif; font-size: 13.008px; line-height: 1.5;">
+						<h3 class="hd3"
+							style="margin: 0px; padding: 0px; border: 0px; font-size: 1.5em; color: rgb(27, 27, 27); font-family: noto, '맑은 고딕', '돋움', tahoma, sans-serif; background-color: rgb(255, 255, 255);">
+							<span
+								style="color: rgb(0, 117, 200); font-family: '나눔바른고딕', NanumBarunGothic, NanumBarunGothicOTF; font-size: 18pt;">SFT
+								소개</span>
+						</h3>
+
+						<!-- pc버전 -->
+						<div class="lt_service hidden-sm hidden-xs"
+							style="padding: 0px 0; float: center; margin: 0.5%; width: 32.333%;">
+							<embed type="text/html"
+								src="https://www.youtube.com/embed/AdMjjSKgAGM"
+								style="width: 800px; height: 500px;">
+						</div>
+						
+						
+						<!-- 모바일버전 -->
+						<div class="m_go_btn side-mobile-area hidden-lg hidden-md"
+							style="padding: 0px 0; float: center; margin: 0.5%; width: 100%;">
+							<embed type="text/html"
+								src="https://www.youtube.com/embed/AdMjjSKgAGM"
+								style="width: 100%; height: 100%;">
+						</div>
+					</div>
+				</div>
+
+			</article>
+		</div>
+	</div>
+
+
+
+	<!-- 홈05 공지사항-->
+	<th:block th:insert="fragments/home05"></th:block>
+	<!-- 하단-->
+	<th:block th:insert="fragments/bottom"></th:block>
+	<!-- 하단-->
+	<th:block th:insert="fragments/banner"></th:block>
+</div>
+</html>

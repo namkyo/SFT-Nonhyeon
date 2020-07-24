@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="~{/layout/layout1}">
+<div layout:fragment="content">
+	<!-- 탑-->
+	<th:block th:insert="fragments/top"></th:block>
+
+	<div id="wrapper">
+
+		<div id="container">
+			<h2 id="container_title" class="top hidden-xs hidden-sm"
+				title="수익인증 1 페이지">수익인증</h2>
+			<div class="bo_top_img"></div>
+			<div id="bo_list_total" class="pc_view">
+				<span>전체 1건</span> 1 페이지
+			</div>
+
+			<div id="nav">
+				<div class="nav_wr">
+					<a href="http://fxcityw.com"><i class="fa fa-home"></i> HOME</a>
+					&gt; 수익인증
+				</div>
+			</div>
+
+
+			<div id="bo_list">
+
+				<fieldset id="bo_sch">
+					<legend>게시물 검색</legend>
+
+					<form name="fsearch" method="get">
+						<input type="hidden" name="bo_table" value="certify"> <input
+							type="hidden" name="sca" value=""> <input type="hidden"
+							name="sop" value="and"> <label for="sfl"
+							class="sound_only">검색대상</label> <select name="sfl" id="sfl">
+							<option value="wr_subject">제목</option>
+							<option value="wr_content">내용</option>
+							<option value="wr_subject||wr_content">제목+내용</option>
+							<option value="mb_id,1">회원아이디</option>
+							<option value="mb_id,0">회원아이디(코)</option>
+							<option value="wr_name,1">글쓴이</option>
+							<option value="wr_name,0">글쓴이(코)</option>
+						</select> <input name="stx" value="" placeholder="검색어(필수)" required
+							id="stx" class="sch_input" size="15" maxlength="20">
+						<button type="submit" value="검색" class="sch_btn">
+							<i class="fa fa-search" aria-hidden="true"></i> <span
+								class="sound_only">검색</span>
+						</button>
+					</form>
+				</fieldset>
+
+
+				<form name="fboardlist" id="fboardlist"
+					action="./board_list_update.php"
+					onsubmit="return fboardlist_submit(this);" method="post">
+					<input type="hidden" name="bo_table" value="certify"> <input
+						type="hidden" name="sfl" value=""> <input type="hidden"
+						name="stx" value=""> <input type="hidden" name="spt"
+						value=""> <input type="hidden" name="sst"
+						value="wr_num, wr_reply"> <input type="hidden" name="sod"
+						value=""> <input type="hidden" name="page" value="1">
+					<input type="hidden" name="sw" value="">
+
+					<div class="board_list">
+						<ul>
+							<li class="  ">
+								<div class="bo_subject">
+									<a
+										href="/sftNotice=1"
+										class="bo_subject"> 수익 인증 입니다~~~ <i class="fa fa-heart"
+										aria-hidden="true"></i> <i class="fa fa-download"
+										aria-hidden="true"></i>
+									</a>
+
+								</div>
+								<div class="bo_info">
+									<span class="sound_only">작성자</span><span class="sv_guest">임영우</span>
+									<span class="bo_date"> <i class="fa fa-clock-o"></i>
+										12-26
+									</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="bo_fx">
+						<ul class="btn_bo_adm">
+						</ul>
+						<ul class="btn_wr">
+							<li><a href="/sft?page=page04_01" class="btn btn_b02">글쓰기</a></li>
+						</ul>
+					</div>
+				</form>
+
+
+
+				<!-- 게시판 목록 시작 -->
+			</div>
+
+
+			<!-- 홈05 공지사항-->
+			<th:block th:insert="fragments/home05"></th:block>
+			<!-- 하단-->
+			<th:block th:insert="fragments/bottom"></th:block>
+			<!-- 하단-->
+			<th:block th:insert="fragments/banner"></th:block>
+		</div>
+</html>

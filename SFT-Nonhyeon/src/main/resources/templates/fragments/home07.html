@@ -1,0 +1,41 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<div id="ft" >
+
+	<div class="ft_info" style="border-bottom: dashed; color: #ffffff;">
+
+		<div class="lt" style="background: #ffffff;">
+			<h2>
+				<a href="/notice" class="lt_title" style="color: #000000;">실시간가입현황</a>
+			</h2>
+			<ul>
+				<li th:each="membershipStatus:${MembershipStatus}"
+					style="color: #ffffff;">[[${membershipStatus.comments}]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					[[${membershipStatus.time}]]
+					<span
+					th:if="${membershipStatus.getStatus().toString().equals('01')}"
+					style="color: #56ff00;float: right; ">승인</span> <span
+					th:if="${membershipStatus.getStatus().toString().equals('02')}"
+					style="color: #ff0000; float: right; ">거절</span>
+				</li>
+			</ul>
+		</div>
+		<div class="lt" style="background: #ffffff;">
+			<h2>
+				<a href="/notice" class="lt_title" style="color: #000000;">문의현황</a>
+			</h2>
+			<ul>
+				<li th:each="realStatus:${RealStatus}" style="color: #ffffff;">[[${realStatus.comments}]]
+					<span th:if="${realStatus.getStatus().toString().equals('01')}"
+					style="color: #56ff00; float: right;">상담완료</span> <span
+					th:if="${realStatus.getStatus().toString().equals('02')}"
+					style="color: #ff0000; float: right;">상담중</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+</html>

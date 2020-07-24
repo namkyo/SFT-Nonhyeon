@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="~{/layout/layout1}">
+<div layout:fragment="content">
+	<!-- 탑-->
+	<th:block th:insert="fragments/top"></th:block>
+
+	<div id="wrapper">
+
+		<div id="container">
+			<h2 id="container_title" class="top hidden-xs hidden-sm"
+				title="수익인증 1 페이지">수익인증</h2>
+			<div class="bo_top_img"></div>
+			<div id="bo_list_total" class="pc_view">
+				<span>전체 1건</span> 1 페이지
+			</div>
+
+			<div id="nav">
+				<div class="nav_wr">
+					<a href="http://fxcityw.com"><i class="fa fa-home"></i> HOME</a>
+					&gt; 수익인증
+				</div>
+			</div>
+
+
+			<div id="wrapper">
+
+				<div id="container">
+					<h2 id="container_title" class="top hidden-xs hidden-sm"
+						title="수익 인증 입니다~~~ &gt; 수익인증">수익인증</h2>
+					<script src="http://fxcityw.com/js/viewimageresize.js"></script>
+
+					<div class="bo_top_img"></div>
+					<div id="nav">
+						<div class="nav_wr">
+							<a href="http://fxcityw.com"><i class="fa fa-home"></i> HOME</a>
+							&gt; 수익인증
+						</div>
+					</div>
+
+
+					<article id="bo_v">
+						<header>
+							<h2 id="bo_v_title">
+								<span class="bo_v_tit"> 수익 인증 입니다~~~</span>
+							</h2>
+
+						</header>
+
+						<section id="bo_v_info">
+							<h2>페이지 정보</h2>
+							<span class="sound_only">작성자 </span><span class="sv_guest">임영우</span><span
+								class="ip"></span> <span class="sound_only">작성일</span><i
+								class="fa fa-clock-o" aria-hidden="true"></i> 19-12-26 15:26 <span
+								class="sound_only">조회</span><strong><i
+								class="fa fa-eye" aria-hidden="true"></i> 264회</strong> <span
+								class="sound_only">댓글</span><strong><i
+								class="fa fa-commenting-o" aria-hidden="true"></i> 0건</strong>
+						</section>
+
+						<section id="bo_v_atc">
+							<h2 id="bo_v_atc_title">본문</h2>
+
+							<div id="bo_v_img">
+								<a
+									href="http://fxcityw.com/bbs/view_image.php?bo_table=certify&amp;fn=1982114344_knDM4vOc_86e511641724ef955ba4065aa9f15e41efe077c1.jpg"
+									target="_blank" class="view_image"><img
+									src="http://fxcityw.com/data/file/certify/1982114344_knDM4vOc_86e511641724ef955ba4065aa9f15e41efe077c1.jpg"
+									alt="" width="317" height="960"></a>
+							</div>
+							<div id="bo_v_con">
+								<p>VIP 리딩방 최고입니다</p>
+								<p>
+									<br />
+								</p>
+								<p>앞으로도 잘부탁드려요 ^^</p>
+							</div>
+
+
+
+
+
+
+
+
+							<div id="bo_v_share"></div>
+
+
+
+						</section>
+
+
+
+
+
+						<div id="bo_v_top">
+							<ul class="bo_v_left">
+								<li><a
+									href="./password.php?w=u&amp;bo_table=certify&amp;wr_id=1&amp;page="
+									class="btn_b01 btn">수정</a></li>
+								<li><a
+									href="./password.php?w=d&amp;bo_table=certify&amp;wr_id=1&amp;page="
+									class="btn_b01 btn" onclick="del(this.href); return false;">
+										삭제</a></li>
+							</ul>
+							<div class="bo_v_right">
+								<a href="./board.php?bo_table=certify&amp;page="
+									class="btn_b01 btn">목록</a> <a
+									href="./write.php?w=r&amp;bo_table=certify&amp;wr_id=1"
+									class="btn_b01 btn">답변</a> <a
+									href="./write.php?bo_table=certify" class="btn_b02 btn">글쓰기</a>
+							</div>
+						</div>
+
+
+
+						<script>
+							// 글자수 제한
+							var char_min = parseInt(0); // 최소
+							var char_max = parseInt(0); // 최대
+						</script>
+
+
+						<!-- 홈05 공지사항-->
+						<th:block th:insert="fragments/home05"></th:block>
+						<!-- 하단-->
+						<th:block th:insert="fragments/bottom"></th:block>
+						<!-- 하단-->
+						<th:block th:insert="fragments/banner"></th:block>
+				</div>
+</html>

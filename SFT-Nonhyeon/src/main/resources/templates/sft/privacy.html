@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="~{/layout/layout1}">
+<div layout:fragment="content">
+	<!-- 탑-->
+	<th:block th:insert="fragments/top"></th:block>
+
+	<div id="wrapper">
+
+		<div id="container">
+			<h2 id="container_title" class="top hidden-xs hidden-sm" title="개인정보이용동의">개인정보이용동의</h2>
+			<article id="ctt" class="ctt_Cate_code03">
+				<div id="ctt_con">
+					<div style="text-align: right;">
+						<img
+							th:src="@{/theme/cookie/img/pagelogo.png}"
+							th:title="@{/theme/cookie/img/pagelogo.png}"
+							th:alt="@{/theme/cookie/img/pagelogo.png}" />
+					</div>
+					<p></p>
+					<p>
+						<br />
+					</p>
+					<p>
+						<br />
+					</p>
+					<p>
+						<br />
+					</p>
+					<div align="left"
+						style="font-family: 'Noto Sans KR', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif; font-size: 13.008px; line-height: 1.5;">
+						<h3 class="hd3"
+							style="margin: 0px; padding: 0px; border: 0px; font-size: 1.5em; color: rgb(27, 27, 27); font-family: noto, '맑은 고딕', '돋움', tahoma, sans-serif; background-color: rgb(255, 255, 255);">
+							<span
+								style="color: rgb(0, 117, 200); font-family: '나눔바른고딕', NanumBarunGothic, NanumBarunGothicOTF; font-size: 18pt;">지사/지점문의</span>
+						</h3>
+						<p class="stxt"
+							style="margin-top: 20px; color: rgb(27, 27, 27); font-family: noto, '맑은 고딕', '돋움', tahoma, sans-serif; font-size: 16px; background-color: rgb(255, 255, 255);">
+							<span
+								style="font-family: '나눔바른고딕', NanumBarunGothic, NanumBarunGothicOTF; font-size: 12pt;">멘트준비중</span>
+						</p>
+						<p class="stxt"
+							style="margin-top: 20px; color: rgb(27, 27, 27); font-family: noto, '맑은 고딕', '돋움', tahoma, sans-serif; font-size: 16px; background-color: rgb(255, 255, 255);">
+							<span
+								style="font-family: '나눔바른고딕', NanumBarunGothic, NanumBarunGothicOTF; font-size: 14pt;"><br /></span>
+						</p>
+					</div>
+				</div>
+
+			</article>
+		</div>
+	</div>
+
+
+
+	<!-- 홈05 공지사항-->
+	<th:block th:insert="fragments/home05"></th:block>
+	<!-- 하단-->
+	<th:block th:insert="fragments/bottom"></th:block>
+	<!-- 하단-->
+	<th:block th:insert="fragments/banner"></th:block>
+</div>
+</html>

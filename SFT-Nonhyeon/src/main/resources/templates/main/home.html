@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="~{/layout/layout1}">
+<div layout:fragment="content">
+	<div id="wrapper">
+		<div id="container">
+			<!-- 탑-->
+			<th:block th:insert="fragments/top"></th:block>
+
+			<!-- 홈01 슬라이드 이미지-->
+			<th:block th:insert="fragments/home01"></th:block>
+			<!-- 홈02 메달 -->
+			<th:block th:insert="fragments/home03"></th:block>
+			<!-- 홈02 지점문의-->
+			<th:block th:insert="fragments/home04"></th:block>
+			<!-- 홈04 정밀분석-->
+			<th:block th:insert="fragments/home06"></th:block>
+			<!-- 홈02 실시간가입현황 -->
+			<th:block th:insert="fragments/home07"></th:block>
+			<!-- 홈05 공지사항-->
+			<th:block th:insert="fragments/home05"></th:block>
+			<!-- 하단-->
+			<th:block th:insert="fragments/bottom"></th:block>
+			<!-- 하단-->
+			<th:block th:insert="fragments/banner"></th:block>
+		</div>
+	</div>
+</div>
+</html>

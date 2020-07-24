@@ -1,0 +1,53 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<div class="ft_wr hidden-sm hidden-xs">
+	<div id="ft_copy">
+		Copyright &copy; <b>2020 SFT 논현지사(SFT).</b> All rights reserved.<br>
+		<span style="color: #121212">#SFT 논현지사 #SFT #SFT 논현지사 #SFT논현점</span>
+	</div>
+
+
+</div>
+
+<button type="button" id="top_btn">
+	<i class="fa fa-arrow-up" aria-hidden="true"></i><span
+		class="sound_only">상단으로</span>
+</button>
+
+<script>
+jQuery(function($) {
+
+    $( document ).ready( function() {
+
+        // 폰트 리사이즈 쿠키있으면 실행
+        font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+        
+ 
+        if ($('#top_btn').length) {
+            var scrollTrigger = 100, // px
+                backToTop = function () {
+                    var scrollTop = $(window).scrollTop();
+                    if (scrollTop > scrollTrigger) {
+                        $('#top_btn').addClass('show');
+                    } else {
+                        $('#top_btn').removeClass('show');
+                    }
+                };
+            backToTop();
+            $(window).on('scroll', function () {
+                backToTop();
+            });
+            $('#top_btn').on('click', function (e) {
+                e.preventDefault();
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 700);
+            });
+        }
+    });
+});
+</script>
+</html>

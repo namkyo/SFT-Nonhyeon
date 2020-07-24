@@ -1,0 +1,230 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<header id="hd">
+	<h1 id="hd_h1">SFT 논현지사</h1>
+
+	<div class="to_content">
+		<a href="#container">SFT 논현지사 바로가기</a>
+	</div>
+
+
+	<!-- 팝업레이어 시작 { -->
+	<div id="hd_pop">
+		<h2>팝업레이어 알림</h2>
+
+		<span class="sound_only">팝업레이어 알림이 없습니다.</span>
+	</div>
+
+	<script>
+		$(function() {
+			$(".hd_pops_reject").click(function() {
+				var id = $(this).attr('class').split(' ');
+				var ck_name = id[1];
+				var exp_time = parseInt(id[2]);
+				$("#" + id[1]).css("display", "none");
+				set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+			});
+			$('.hd_pops_close').click(function() {
+				var idb = $(this).attr('class').split(' ');
+				$('#' + idb[1]).css('display', 'none');
+			});
+		});
+	</script>
+	<!-- } 팝업레이어 끝 -->
+
+
+
+	<div id="hd_wrapper">
+
+		<div id="logo">
+			<a href="/" title="SFT 논현지사"><img th:src="@{/img/m_logo.png}"
+				alt="SFT 논현지사"></a>
+		</div>
+
+		<button type="button" id="gnb_open"
+			style="margin-top: 10px; margin-left: 30px;">
+			<i class="fa fa-bars"></i><span class="sound_only"> SFT 논현지사
+				메뉴열기</span>
+		</button>
+		<!--button type="button" class="hd_sch_btn" style="margin-top: 10px;"><i class="fa fa-search"></i><span class="sound_only">검색열기</span></button-->
+
+		<div id="hd_sch">
+			<div class="sch_wr">
+				<h2 class="sound_only">SFT 논현지사 사이트 내 전체검색</h2>
+				<form name="fsearchbox" action="http://SFTcityw.com/bbs/search.php"
+					onsubmit="return fsearchbox_submit(this);" method="get">
+					<input type="hidden" name="sfl" value="wr_subject||wr_content">
+					<input type="hidden" name="sop" value="and"> <input
+						type="text" name="stx" id="sch_stx" placeholder="검색어(필수)" required
+						maxlength="20">
+					<button type="submit" value="검색" id="sch_submit">
+						<i class="fa fa-search" aria-hidden="true"></i><span
+							class="sound_only">검색</span>
+					</button>
+				</form>
+
+				<script>
+					function fsearchbox_submit(f) {
+						if (f.stx.value.length < 2) {
+							alert("검색어는 두글자 이상 입력하십시오.");
+							f.stx.select();
+							f.stx.focus();
+							return false;
+						}
+
+						// 검색에 많은 부하가 걸리는 경우 이 주석을 제거하세요.
+						var cnt = 0;
+						for (var i = 0; i < f.stx.value.length; i++) {
+							if (f.stx.value.charAt(i) == ' ')
+								cnt++;
+						}
+
+						if (cnt > 1) {
+							alert("빠른 검색을 위하여 검색어에 공백은 한개만 입력할 수 있습니다.");
+							f.stx.select();
+							f.stx.focus();
+							return false;
+						}
+
+						return true;
+					}
+				</script>
+				<button type="button" class="btn_close">
+					<i class="fa fa-times-circle"></i><span class="sound_only">검색</span>
+				</button>
+			</div>
+		</div>
+
+		<div id="gnb" class="pc_view">
+			<ul id="gnb_1dul">
+				<li class="gnb_1dli"><a href="/sft?page=page01" class="gnb_1da"
+					title="SFT 논현지사 지점소개">SFT소개</a></li>
+
+				<li class="gnb_1dli"><a href="/sft?page=page02" class="gnb_1da"
+					title="SFT 논현지사 지점소개">논현지사소개</a></li>
+
+				<li class="gnb_1dli"><a
+					href="http://cnews.thebigdata.co.kr/view.php?ud=2020062617115988186cf2d78c68_23"
+					class="gnb_1da" target="_blank" title="SFT 논현지사 SFT소개">화이트플랏소개
+				</a></li>
+				
+				<li class="gnb_1dli"><a
+					href="https://blog.naver.com/qazwsx23456/222026847454"
+					class="gnb_1da" target="_blank" title="SFT 논현지사 SFT투자방법">SFT투자방법</a></li>
+					
+					
+				<li class="gnb_1dli"><a href="/sft?page=page03" class="gnb_1da"
+					title="SFT 논현지사 지점소개">기간별수익</a></li>
+
+				<li class="gnb_1dli"><a href="/question" class="gnb_1da"
+					title="SFT 논현지사 커뮤니티">지사/지점문의</a></li>
+				<li class="gnb_1dli"><a
+					href="http://www.sft-network.cf/?refid=pa001" class="gnb_1da"
+					target="_blank"><span
+						style="top: 20px; padding: 5px 15px; background: #2C9CE7; color: #fff; font-size: 0.95em; border-radius: 3px;">회원가입</span></a></li>
+			</ul>
+
+		</div>
+
+		<div id="gnb2">
+			<button type="button" class="btn_close">
+				<i class="fa fa-times"></i>
+			</button>
+			<ul class="gnb_tnb">
+				<li><a href="http://www.sft-network.cf/?refid=pa001"
+					target="_blank" title="SFT 논현지사 실전 회원가입">실전 회원가입</a></li>
+
+			</ul>
+			<ul id="gnb2_1dul">
+				<li class="gnb2_1dli"><a href="/sft?page=page01" target="_self"
+					class="gnb2_1da" title="SFT 논현지사 지점소개">SFT소개</a></li>
+				<li class="gnb2_1dli"><a href="/sft?page=page02" target="_self"
+					class="gnb2_1da" title="SFT 논현지사 지점소개">논현지사소개</a></li>
+				<li class="gnb2_1dli"><a href="http://cnews.thebigdata.co.kr/view.php?ud=2020062617115988186cf2d78c68_23" target="_blank"
+					class="gnb2_1da" title="SFT 논현지사 지점소개">화이트플랏소개</a></li>
+				<li class="gnb2_1dli"><a href="https://blog.naver.com/qazwsx23456/222026847454" target="_blank"
+					class="gnb2_1da" title="SFT 논현지사 지점소개">SFT투자방법</a></li>
+				<li class="gnb2_1dli"><a href="/sft?page=page03" target="_self"
+					class="gnb2_1da" title="SFT 논현지사 지점소개">기간별수익</a></li>
+				<li class="gnb2_1dli"><a href="/question" target="_self"
+					class="gnb2_1da" title="SFT 논현지사 지점소개">지사/지점문의</a></li>
+			</ul>
+
+		</div>
+		<script>
+			$(function() {
+				//폰트 크기 조정 위치 지정
+				var font_resize_class = get_cookie("ck_font_resize_add_class");
+				if (font_resize_class == 'ts_up') {
+					$("#text_size button").removeClass("select");
+					$("#size_def").addClass("select");
+				} else if (font_resize_class == 'ts_up2') {
+					$("#text_size button").removeClass("select");
+					$("#size_up").addClass("select");
+				}
+
+				$(".hd_opener").on("click", function() {
+					var $this = $(this);
+					var $hd_layer = $this.next(".hd_div");
+
+					if ($hd_layer.is(":visible")) {
+						$hd_layer.hide();
+						$this.find("span").text("열기");
+					} else {
+						var $hd_layer2 = $(".hd_div:visible");
+						$hd_layer2.prev(".hd_opener").find("span").text("열기");
+						$hd_layer2.hide();
+
+						$hd_layer.show();
+						$this.find("span").text("닫기");
+					}
+				});
+
+				$(".btn_gnb_op").click(
+						function() {
+							$(this).toggleClass("btn_gnb_cl")
+									.next(".gnb2_2dul").slideToggle(300);
+
+						});
+
+				$(".hd_closer").on("click", function() {
+					var idx = $(".hd_closer").index($(this));
+					$(".hd_div:visible").hide();
+					$(".hd_opener:eq(" + idx + ")").find("span").text("열기");
+				});
+
+				$(".hd_sch_btn").on("click", function() {
+					$("#hd_sch").show();
+				});
+
+				$("#hd_sch .btn_close").on("click", function() {
+					$("#hd_sch").hide();
+				});
+
+				$("#gnb_open").on("click", function() {
+					$("#gnb2").show();
+				});
+
+				$("#gnb2 .btn_close").on("click", function() {
+					$("#gnb2").hide();
+				});
+
+			});
+
+			//상단고정
+			if ($("#hd").length) {
+				var jbOffset = $("#hd").offset();
+				$(window).scroll(function() {
+					if ($(document).scrollTop() > jbOffset.top) {
+						$('body').addClass('fixed');
+					} else {
+						$('body').removeClass('fixed');
+					}
+				});
+			}
+		</script>
+	</div>
+</header>
+</html>

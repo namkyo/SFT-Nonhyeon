@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="~{/layout/layout1}">
+<div layout:fragment="content">
+	<!-- 탑-->
+	<th:block th:insert="fragments/top"></th:block>
+
+	<div id="wrapper">
+
+		<div id="container">
+			<h2 id="container_title" class="top hidden-xs hidden-sm"
+				title="수익인증 글쓰기">수익인증 글쓰기</h2>
+			<!-- skin : theme/basic -->
+			<div class="bo_top_img"></div>
+			<div id="nav">
+				<div class="nav_wr">
+					<a href="http://sft-network.com"><i class="fa fa-home"></i>
+						HOME</a> &gt; 수익인증
+				</div>
+			</div>
+			<!-- enctype="multipart/form-data"  -->
+
+			<section id="bo_w">
+				<form name="fwrite" id="fwrite" th:action="@{noticeModify}"
+					method="post" autocomplete="off">
+					<div class="form_01 write_div">
+						<!-- 
+						<div class="write_div">
+							<label for="wr_password" class="sound_only">비밀번호<strong>필수</strong></label>
+							<input type="password" name="wr_password" id="wr_password"
+								required class="frm_input full_input required" maxlength="20"
+								placeholder="비밀번호">
+						</div> -->
+						<input type="hidden" id="bno" name="bno" th:value="${vo.bno}">
+						
+						<div class="bo_w_tit write_div">
+							<label for="title" class="sound_only">제목<strong>필수</strong></label>
+							<input type="text" name="title" th:value="${vo.title}" id="title"
+								required class="frm_input full_input required" placeholder="제목">
+						</div>
+
+
+						<div class="write_div">
+							<label for="writer" class="sound_only">이름<strong>필수</strong></label>
+							<input type="text" name="writer" th:value="${vo.writer}"
+								id="writer" required class="frm_input full_input required"
+								maxlength="20" placeholder="이름">
+						</div>
+
+
+						<div class="write_div">
+							<label for="content" class="sound_only">내용<strong>필수</strong></label>
+							<textarea id="content" name="content" class="smarteditor2"
+								maxlength="65536" style="width: 100%; height: 300px" th:text="${vo.content}"></textarea>
+						</div>
+
+
+						<div class="bo_w_link write_div">
+							<label for="wr_link1"><i class="fa fa-link"
+								aria-hidden="true"></i> <span class="sound_only">링크 #1</span></label> <input
+								type="text" name="wr_link1" value="" id="wr_link1"
+								class="frm_input wr_link">
+						</div>
+						<div class="bo_w_link write_div">
+							<label for="wr_link2"><i class="fa fa-link"
+								aria-hidden="true"></i> <span class="sound_only">링크 #2</span></label> <input
+								type="text" name="wr_link2" value="" id="wr_link2"
+								class="frm_input wr_link">
+						</div>
+
+
+					</div>
+
+					<div class="write_div">
+						<a href="/notice" class="btn_b01 btn">취소</a> <input type="submit"
+							value="작성완료" class="btn_submit btn">
+					</div>
+				</form>
+			</section>
+
+		</div>
+	</div>
+
+	<!-- 홈05 공지사항-->
+	<th:block th:insert="fragments/home05"></th:block>
+	<!-- 하단-->
+	<th:block th:insert="fragments/bottom"></th:block>
+	<!-- 하단-->
+	<th:block th:insert="fragments/banner"></th:block>
+</div>
+</html>

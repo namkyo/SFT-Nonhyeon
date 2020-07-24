@@ -1,0 +1,125 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!-- 배너 최신글 -->
+
+<!-- Main_슬라이드 최신글 시작 { -->
+<div class="lt_bn hidden-xs hidden-sm">
+	<ul>
+		<li class="list_0"
+			th:style="'background:url(' + @{/data/file/banner/main02.jpg} + ');'">
+			<div class="bg"></div>
+			<div class="bn_txt">
+				<div class="txt_wr hidden-lg hidden-md">
+					<div class="bn_tit_m">SFT 논현지사에 방문해주셔서 감사합니다</div>
+					<div class="bn_detail">신뢰 그리고 성공 회원님들과 함께하겠습니다.</div>
+
+
+				</div>
+
+				<div class="txt_wr hidden-sm hidden-xs">
+					<div class="bn_tit">SFT 논현지사에 방문해주셔서 감사합니다</div>
+					<div class="bn_detail">신뢰 그리고 성공 회원님들과 함께하겠습니다.</div>
+
+
+				</div>
+			</div>
+		</li>
+		<li class="list_1"
+			th:style="'background:url(' + @{/data/file/banner/main03.jpg} + ');'">
+			<div class="bg"></div>
+			<div class="bn_txt">
+				<div class="txt_wr hidden-lg hidden-md">
+					<div class="bn_tit_m">SFT 논현지사에 방문해주셔서 감사합니다</div>
+					<div class="bn_detail">신뢰 그리고 성공 회원님들과 함께하겠습니다.</div>
+
+
+				</div>
+
+				<div class="txt_wr hidden-sm hidden-xs">
+					<div class="bn_tit">SFT 논현지사에 방문해주셔서 감사합니다</div>
+					<div class="bn_detail">신뢰 그리고 성공 회원님들과 함께하겠습니다.<div>
+
+
+				</div>
+			</div>
+		</li>
+		<li class="list_2"
+			th:style="'background:url(' + @{/data/file/banner/main01.jpg} + ');'">
+			<div class="bg"></div>
+			<div class="bn_txt">
+				<div class="txt_wr hidden-lg hidden-md">
+					<div class="bn_tit_m">SFT 논현지사 TRUST SUCCESS</div>
+					<div class="bn_detail">SFT `논현지사` 추천인코드로 입력하시면 누구나 2만원
+						추가지급, 신뢰, 그리고 성공 여러분과 함께하겠습니다.</div>
+
+
+				</div>
+
+				<div class="txt_wr hidden-sm hidden-xs">
+					<div class="bn_tit">SFT 논현지사 TRUST SUCCESS</div>
+					<div class="bn_detail">SFT `논현지사`을 추천인코드로 입력하시면 누구나 2만원
+						추가지급, 신뢰, 그리고 성공 여러분과 함께하겠습니다.</div>
+
+
+				</div>
+			</div>
+		</li>
+	</ul>
+
+	<!-- 오픈링크 -->
+	<a href="https://open.kakao.com/o/sVUIIskc" target="_blank"><button
+			type="button" class="btn_bottom hidden-sm hidden-xs"></button></a>
+
+</div>
+<!-- } Main_슬라이드 최신글 끝 -->
+<script>
+	$('.lt_bn ul').show().bxSlider(
+			{
+
+				pagerCustom : '#bx_pager',
+				controls : false,
+				auto : true,
+				pause : 8000,
+				speed : 800,
+
+				onSliderLoad : function() {
+					$('.lt_bn .bn_txt').eq(1).addClass('active-slide');
+					$(".bn_txt.active-slide").addClass("test");
+				},
+				onSlideAfter : function(currentSlideNumber, totalSlideQty,
+						currentSlideHtmlObject) {
+					console.log(currentSlideHtmlObject);
+					$('.active-slide').removeClass('active-slide');
+					$('.lt_bn .bn_txt').eq(currentSlideHtmlObject + 1)
+							.addClass('active-slide');
+					$(".bn_txt.active-slide").addClass("test");
+
+				},
+				onSlideBefore : function() {
+					$(".bn_txt.active-slide").removeClass("test");
+					$(".one.bn_txt.active-slide").removeAttr('style');
+
+				}
+			});
+
+	function parallax() {
+		var scrolled = $(window).scrollTop();
+		$('.lt_bn ul li').css('background-position',
+				"0 " + (scrolled * 1) + 'px');
+	}
+	$(window).scroll(function() {
+		parallax();
+	});
+
+	jQuery(document).ready(function($) {
+		$(".btn_bottom").on("click", function() {
+			var position = $('#index').offset(); // 위치값
+			$('html,body').animate({
+				scrollTop : position.top
+			}, 400); // 이동
+		});
+	});
+</script>
+</html>

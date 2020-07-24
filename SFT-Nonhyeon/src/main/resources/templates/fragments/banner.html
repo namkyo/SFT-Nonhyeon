@@ -1,0 +1,73 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!--  우측배너  -->
+<style>
+#TelBtn_main {
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+	z-index: 9999999;
+}
+
+#TelBtn_main a {
+	color: #fff;
+}
+
+#TelBtn_main2 {
+	float: right;
+	overflow: hidden;
+	position: fixed;
+	bottom: 0;
+	width: 200px;
+	text-align: center;
+	margin-bottom: 190px;
+	right: 5px;
+	z-index: 9999999;
+}
+
+#TelBtn_main a {
+	color: #fff;
+}
+</style>
+
+<!-- 모바일 -->
+<div id="TelBtn_main"
+	class="m_go_btn side-mobile-area hidden-lg hidden-md">
+	<a href="http://www.sft-network.cf/?refid=pa001" target="_blank"
+		title="SFT 논현지사"><img th:src="@{/theme/cookie/img/join_btn_m.png}"
+		width="33.333%" alt="SFT 논현지사"></a><a
+		href="https://open.kakao.com/o/sVUIIskc" target="_blank"
+		title="SFT 논현지사 SFT 카카오채널"><img
+		th:src="@{/theme/cookie/img/btn_kakao_m.png}" width="33.333%"
+		alt="SFT 논현지사"></a><a href="tel:010.2224.2044" title="SFT 논현지사"><img
+		th:src="@{/theme/cookie/img/tel_btn_m.png}" width="33.333%"
+		alt="SFT 논현지사"></a>
+</div>
+9021
+<!-- pc화면일때 사이드 -->
+<div id="TelBtn_main2" class="m_go_btn side-pc-area hidden-sm hidden-xs">
+	<a href="http://www.sft-network.cf/?refid=pa001" target="_blank"
+		title="SFT 논현지사"><img th:src="@{/theme/cookie/img/join_btn_m.png}"
+		width="33.333%" alt="SFT 논현지사"></a><a
+		href="https://open.kakao.com/o/gBmFbdjc" target="_blank"
+		title="SFT 논현지사 SFT 카카오채널"><img
+		th:src="@{/theme/cookie/img/btn_kakao_m.png}" width="33.333%"
+		alt="SFT 논현지사"></a><a href="tel:010.2224.2044" title="SFT 논현지사"><img
+		th:src="@{/theme/cookie/img/tel_btn_m.png}" width="33.333%"
+		alt="SFT 논현지사"></a>
+</div>
+
+<div id="TelBtn_main2" class="m_go_btn side-pc-area hidden-sm hidden-xs">
+	<a href="http://www.sft-network.cf/?refid=pa001" target="_blank"
+		title="SFT논현지사 SFT 회원가입"> <img
+		th:src="@{/theme/cookie/img/join_btn.png}" width="100%"
+		alt="SFT논현지사 SFT 회원가입">
+	</a> <a href="https://open.kakao.com/o/gBmFbdjc" target="_blank"
+		title="SFT논현지사 SFT 카카오채널"> <img
+		th:src="@{/theme/cookie/img/btn_kakao.png}" alt="SFT논현지사 SFT 카카오채널">
+	</a>
+</div>
+</html>

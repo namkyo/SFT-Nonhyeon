@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="~{/layout/layout1}">
+<div layout:fragment="content">
+	<!-- 탑-->
+	<th:block th:insert="fragments/top"></th:block>
+
+	<div id="wrapper">
+		s
+
+		<div id="container">
+
+
+			<h2 id="container_title" class="top hidden-xs hidden-sm"
+				title="수익 인증 입니다~~~ &gt; 수익인증">수익인증</h2>
+			<script th:src="@{/js/viewimageresize.js}"></script>
+
+			<div class="bo_top_img"></div>
+			<div id="nav">
+				<div class="nav_wr">
+					<a href="http://sft-network.com"><i class="fa fa-home"></i> HOME</a>
+					&gt; 수익인증
+				</div>
+			</div>
+
+
+			<article id="bo_v">
+				<header>
+					<h2 id="bo_v_title">
+						<span class="bo_v_tit" th:text="${vo.title}"></span>
+					</h2>
+
+				</header>
+
+				<section id="bo_v_info">
+					<h2>페이지 정보</h2>
+					<span class="sound_only">작성자 </span><span class="sv_guest"
+						th:text="${vo.writer}"></span><span class="ip"></span> <span
+						class="sound_only">작성일</span><i class="fa fa-clock-o"
+						aria-hidden="true"></i> [[${#dates.format(vo.regdate,
+					'yyyy-MM-dd')}]]<span class="sound_only">조회</span><strong><i
+						class="fa fa-eye" aria-hidden="true"></i> 0회</strong> <span
+						class="sound_only">댓글</span><strong><i
+						class="fa fa-commenting-o" aria-hidden="true"></i> 0건</strong>
+				</section>
+
+
+				<section id="bo_v_atc">
+					<h2 id="bo_v_atc_title">본문</h2>
+
+					<div id="bo_v_con"th:text="${vo.content}"></div>
+
+
+
+					<div id="bo_v_share"></div>
+
+
+
+				</section>
+
+
+
+
+
+				<div id="bo_v_top">
+					<ul class="bo_v_left">
+						<li><a th:href="${'/noticeModify?bno=' + vo.bno}"
+							class="btn_b01 btn">수정</a></li>
+						<li><a th:href="${'/noticeDelete?bno=' + vo.bno}"
+							class="btn_b01 btn"> 삭제</a></li>
+					</ul>
+					<div class="bo_v_right">
+						<a href="/notice" class="btn_b01 btn">목록</a>
+					</div>
+				</div>
+			</article>
+		</div>
+	</div>
+
+
+	<script>
+		// 글자수 제한
+		var char_min = parseInt(0); // 최소
+		var char_max = parseInt(0); // 최대
+	</script>
+
+
+	<!-- 홈05 공지사항-->
+	<th:block th:insert="fragments/home05"></th:block>
+	<!-- 하단-->
+	<th:block th:insert="fragments/bottom"></th:block>
+	<!-- 하단-->
+	<th:block th:insert="fragments/banner"></th:block>
+</div>
+</html>
